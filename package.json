@@ -1,0 +1,16 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danny101201 <hiunji64@gmail.com> (https://github.com/Danny101201)",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.1"
+  }
+}
