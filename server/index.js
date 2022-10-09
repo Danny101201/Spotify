@@ -17,7 +17,9 @@ app.use('/api/auth', authRoute)
 app.use('/api/song', songRoute)
 app.use('/api/playList', playlistRoute)
 app.use('/api/search', searchRoute)
-
+app.get('/', () => {
+  console.log('hellow world')
+})
 app.listen(process.env.PORT,async()=>{
   connectDb();
   console.log('server listening on port : '+process.env.PORT);
