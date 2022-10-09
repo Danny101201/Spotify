@@ -4,7 +4,7 @@ import UserToken from '../module/RefreshToken.js'
 export const generateRefreshTokens = async (user)=>{
   try{
 
-    const payload = { _id: user._id, email: user.email }
+    const payload = { _id: user._id, email: user.email, isAdmin: user.isAdmin }
     const refreshtoken = jwt.sign(
       payload,
       process.env.REFRESH_TOKEN_PRIVATE_KEY,

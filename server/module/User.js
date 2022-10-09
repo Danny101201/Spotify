@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   year:{type:String, required:true},
   likeSongs:{type:[String], default:[]},
   playlists:{type:[String], default:[]},
-  isAdmin:{type:Boolean, default:false},
+  isAdmin: { type: Boolean, default: false, required: false },
 })
 
 userSchema.methods.generateAuthToken=async function(){

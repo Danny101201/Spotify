@@ -12,7 +12,6 @@ export const validateUserSignUp = (user) => {
     year: Joi.string().required(),
     gender: Joi.string().valid("male", "female", "non-binary").required(),
   });
-
   return schema.validate(user)
 }
 export const validateUserSignIn = (user) => {
@@ -32,7 +31,6 @@ export const validateSongInfo = (song) => {
     img: Joi.string().required(),
     duration: Joi.number().required(),
   });
-
   return schema.validate(song)
 }
 
@@ -44,5 +42,20 @@ export const validatePlayListInfo = (playList)=>{
     songs:Joi.array().items(Joi.string()),
     img: Joi.string().allow(""),
   })
-  return schema.valid(playList)
+  return schema.validate(playList)
+}
+export const validateUpdatePlayListInfo = (playList) => {
+  const schema = Joi.object({
+    name: Joi.string().required(),
+    desc: Joi.string().allow(""),
+    img: Joi.string().allow(""),
+  })
+  return schema.validate(playList)
+}
+export const validateAddSongToPlayListInfo = (playList) => {
+  const schema = Joi.object({
+    playlistId: Joi.string().required(),
+    songId: Joi.string().required(),
+  });
+  return schema.validate(playList)
 }
